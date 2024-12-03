@@ -26,29 +26,52 @@
 </script>
 
 <div class="min-h-screen flex flex-col items-center justify-center relative bg-white">
-	<div class="relative max-w-4xl w-full p-12 bg-white rounded-2xl shadow-lg flex items-center z-10">
-		<div class="flex-1 text-left pr-8">
-			<blockquote class="text-xl text-gray-700 italic mb-6 font-serif">
-				"{testimonials[currentIndex].text}"
-			</blockquote>
-			<div class="flex items-center">
-				<p class="text-xl font-bold text-gray-800">{testimonials[currentIndex].name}</p>
-				<span class="text-md text-gray-500 ml-4">({testimonials[currentIndex].role})</span>
-			</div>
-		</div>
+	<!-- Background Patterns -->
+	<img
+		src="/images/pattern-bg.svg"
+		alt="Background Pattern"
+		class="absolute top-0 left-0 w-full h-full object-cover"
+	/>
+	<img
+		src="/images/pattern-curve.svg"
+		alt="Curve Pattern"
+		class="absolute bottom-0 left-0 w-full"
+	/>
+
+	<div
+		class="relative max-w-sm w-full p-6 bg-white rounded-2xl shadow-lg flex flex-col items-center z-10"
+	>
 		<img
-			class="w-64 h-64 rounded-lg border-4 border-gray-300 shadow-md"
+			class="w-56 h-56 rounded-lg shadow-md mb-4"
 			src={testimonials[currentIndex].image}
 			alt={testimonials[currentIndex].name}
 		/>
-	</div>
-	<div class="flex justify-center mt-4 z-10">
-		<button class="btn-circle" onclick={previous}>
-			<img src="/images/icon-prev.svg" alt="Previous" />
-		</button>
-		<button class="btn-circle" onclick={next}>
-			<img src="/images/icon-next.svg" alt="Next" />
-		</button>
+		<img
+			src="/images/pattern-quotes.svg"
+			alt="Quotes Pattern"
+			class="absolute top-0 left-0 w-20 h-20"
+		/>
+		<blockquote class="text-md text-gray-700 italic mb-2 font-serif text-center">
+			<!-- Made text smaller and centered -->
+			"{testimonials[currentIndex].text}"
+		</blockquote>
+		<div class="flex flex-col items-center text-center">
+			<!-- Centered text container -->
+			<p class="text-sm font-bold text-gray-800">{testimonials[currentIndex].name}</p>
+			<!-- Made text smaller -->
+			<span class="text-xs text-gray-500">({testimonials[currentIndex].role})</span>
+			<!-- Made text smaller -->
+		</div>
+
+		<!-- Buttons positioned directly below the text -->
+		<div class="flex justify-center mt-4 z-10">
+			<button class="btn-circle" onclick={previous}>
+				<img src="/images/icon-prev.svg" alt="Previous" />
+			</button>
+			<button class="btn-circle" onclick={next}>
+				<img src="/images/icon-next.svg" alt="Next" />
+			</button>
+		</div>
 	</div>
 </div>
 
@@ -69,6 +92,7 @@
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 		transition: background-color 0.3s;
 		cursor: pointer;
+		margin: 0; /* Remove margin to connect buttons */
 	}
 
 	.btn-circle:hover {
@@ -82,5 +106,18 @@
 
 	.font-serif {
 		font-family: 'Georgia', serif; /* Example font, change as needed */
+	}
+
+	/* Responsive adjustments */
+	@media (max-width: 640px) {
+		.text-md {
+			font-size: 1rem; /* Smaller font size for quote */
+		}
+		.text-sm {
+			font-size: 0.875rem; /* Smaller font size for name */
+		}
+		.text-xs {
+			font-size: 0.75rem; /* Smaller font size for role */
+		}
 	}
 </style>
