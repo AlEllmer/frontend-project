@@ -1,3 +1,15 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+* {
+	font-family: 'Inter', sans-serif;
+}
+
+blockquote {
+	margin-top: -2.5rem;
+}
+
+.asdf {
+	margin-top: -2.5rem;
+}

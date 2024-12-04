@@ -27,51 +27,52 @@
 
 <div class="min-h-screen flex flex-col items-center justify-center relative bg-white">
 	<!-- Background Patterns -->
-	<img
-		src="/images/pattern-bg.svg"
-		alt="Background Pattern"
-		class="absolute top-0 left-0 w-full h-full object-cover"
-	/>
-	<img
-		src="/images/pattern-curve.svg"
-		alt="Curve Pattern"
-		class="absolute bottom-0 left-0 w-full"
-	/>
 
 	<div
-		class="relative max-w-sm w-full p-6 bg-white rounded-2xl shadow-lg flex flex-col items-center z-10"
+		class="relative max-w-sm w-full p-6 bg-white rounded-2xl shadow-lg flex flex-col items-center"
 	>
-		<img
-			class="w-56 h-56 rounded-lg shadow-md mb-4"
-			src={testimonials[currentIndex].image}
-			alt={testimonials[currentIndex].name}
-		/>
-		<img
-			src="/images/pattern-quotes.svg"
-			alt="Quotes Pattern"
-			class="absolute top-0 left-0 w-20 h-20"
-		/>
-		<blockquote class="text-md text-gray-700 italic mb-2 font-serif text-center">
-			<!-- Made text smaller and centered -->
-			"{testimonials[currentIndex].text}"
-		</blockquote>
-		<div class="flex flex-col items-center text-center">
-			<!-- Centered text container -->
-			<p class="text-sm font-bold text-gray-800">{testimonials[currentIndex].name}</p>
-			<!-- Made text smaller -->
-			<span class="text-xs text-gray-500">({testimonials[currentIndex].role})</span>
-			<!-- Made text smaller -->
+		<div class="flex flex-col items-center mb-4 h-10">
+			<img src="/images/pattern-bg.svg" alt="Background Pattern" class="absolute top-0 z-0" />
+		</div>
+		<div>
+			<img
+				src="/images/pattern-curve.svg"
+				alt="Curve Pattern"
+				class="absolute bottom-0 left-0 z-0 h-14"
+			/>
 		</div>
 
-		<!-- Buttons positioned directly below the text -->
-		<div class="flex justify-center mt-4 z-10">
-			<button class="btn-circle" onclick={previous}>
+		<div class="z-10 shadow-xl">
+			<img
+				class="w-64 h-64 rounded-lg shadow-md asdf"
+				src={testimonials[currentIndex].image}
+				alt={testimonials[currentIndex].name}
+			/>
+		</div>
+
+		<div
+			class="relative flex justify-center z-20 border-white bottom-6 p-4 w-20 h-10 shadow-lg rounded-full bg-white"
+		>
+			<button class="absolute left-3 top-3" onclick={previous}>
 				<img src="/images/icon-prev.svg" alt="Previous" />
 			</button>
-			<button class="btn-circle" onclick={next}>
+			<button class="absolute right-3 top-3" onclick={next}>
 				<img src="/images/icon-next.svg" alt="Next" />
 			</button>
 		</div>
+		<img src="/images/pattern-quotes.svg" alt="Quotes Pattern" class="relative left-0 w-16 h-14" />
+		<div class="mb-4">
+			<!-- Added a custom container div -->
+			<blockquote class="text-md text-gray-700 mb-2 font-serif text-center z-10">
+				"{testimonials[currentIndex].text}"
+			</blockquote>
+			<div class="flex flex-col items-center text-center z-10">
+				<p class="text-sm font-bold text-gray-800">{testimonials[currentIndex].name}</p>
+				<span class="text-xs text-gray-500">{testimonials[currentIndex].role}</span>
+			</div>
+		</div>
+
+		<!-- Buttons positioned directly below the text -->
 	</div>
 </div>
 
@@ -80,32 +81,8 @@
 		position: relative;
 	}
 
-	.btn-circle {
-		width: 50px;
-		height: 50px;
-		border-radius: 50%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border: none;
-		background-color: #f7f7f7;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		transition: background-color 0.3s;
-		cursor: pointer;
-		margin: 0; /* Remove margin to connect buttons */
-	}
-
-	.btn-circle:hover {
-		background-color: #e2e2e2;
-	}
-
-	.btn-circle img {
-		width: 24px;
-		height: 24px;
-	}
-
 	.font-serif {
-		font-family: 'Georgia', serif; /* Example font, change as needed */
+		font-family: 'Inter' sans-serif; /* Example font, change as needed */
 	}
 
 	/* Responsive adjustments */
