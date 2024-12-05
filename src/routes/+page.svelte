@@ -32,7 +32,11 @@
 		class="relative max-w-sm w-full p-6 bg-white rounded-2xl shadow-lg flex flex-col items-center"
 	>
 		<div class="flex flex-col items-center mb-4 h-10">
-			<img src="/images/pattern-bg.svg" alt="Background Pattern" class="absolute top-0 z-0" />
+			<img
+				src="/images/pattern-bg.svg"
+				alt="Background Pattern"
+				class="absolute top-0 z-0 h-[19.5rem]"
+			/>
 		</div>
 		<div>
 			<img
@@ -42,9 +46,9 @@
 			/>
 		</div>
 
-		<div class="z-10 shadow-xl">
+		<div class="z-10 shadow-2xl rounded-lg">
 			<img
-				class="w-64 h-64 rounded-lg shadow-md asdf"
+				class="w-64 h-64 shadow-md rounded-lg mt-[-3rem]"
 				src={testimonials[currentIndex].image}
 				alt={testimonials[currentIndex].name}
 			/>
@@ -60,15 +64,19 @@
 				<img src="/images/icon-next.svg" alt="Next" />
 			</button>
 		</div>
-		<img src="/images/pattern-quotes.svg" alt="Quotes Pattern" class="relative left-0 w-16 h-14" />
+		<img
+			src="/images/pattern-quotes.svg"
+			alt="Quotes Pattern"
+			class="relative left-0 w-16 h-12 mt-4 top-[-1rem]"
+		/>
 		<div class="mb-4">
 			<!-- Added a custom container div -->
-			<blockquote class="text-md text-gray-700 mb-2 font-serif text-center z-10">
+			<blockquote class="text-md text-gray-700 mb-2 font-serif text-center mt-[-2.5rem;] z-10">
 				"{testimonials[currentIndex].text}"
 			</blockquote>
 			<div class="flex flex-col items-center text-center z-10">
 				<p class="text-sm font-bold text-gray-800">{testimonials[currentIndex].name}</p>
-				<span class="text-xs text-gray-500">{testimonials[currentIndex].role}</span>
+				<span class="text-xs text-gray-400">{testimonials[currentIndex].role}</span>
 			</div>
 		</div>
 
