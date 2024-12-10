@@ -16,18 +16,16 @@
 
 	let currentIndex = 0;
 
-	const next = () => {
+	function next() {
 		currentIndex = (currentIndex + 1) % testimonials.length;
-	};
+	}
 
-	const previous = () => {
+	function previous() {
 		currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-	};
+	}
 </script>
 
 <div class="min-h-screen flex flex-col items-center justify-center relative bg-white">
-	<!-- Background Patterns -->
-
 	<div
 		class="relative max-w-sm w-full p-6 bg-white rounded-2xl shadow-lg flex flex-col items-center"
 	>
@@ -70,7 +68,6 @@
 			class="relative left-0 w-16 h-12 mt-4 top-[-1rem]"
 		/>
 		<div class="mb-4">
-			<!-- Added a custom container div -->
 			<blockquote class="text-md text-gray-700 mb-2 font-serif text-center mt-[-2.5rem;] z-10">
 				"{testimonials[currentIndex].text}"
 			</blockquote>
@@ -79,8 +76,6 @@
 				<span class="text-xs text-gray-400">{testimonials[currentIndex].role}</span>
 			</div>
 		</div>
-
-		<!-- Buttons positioned directly below the text -->
 	</div>
 </div>
 
@@ -90,19 +85,18 @@
 	}
 
 	.font-serif {
-		font-family: 'Inter' sans-serif; /* Example font, change as needed */
+		font-family: 'Inter' sans-serif;
 	}
 
-	/* Responsive adjustments */
 	@media (max-width: 640px) {
 		.text-md {
-			font-size: 1rem; /* Smaller font size for quote */
+			font-size: 1rem;
 		}
 		.text-sm {
-			font-size: 0.875rem; /* Smaller font size for name */
+			font-size: 0.875rem;
 		}
 		.text-xs {
-			font-size: 0.75rem; /* Smaller font size for role */
+			font-size: 0.75rem;
 		}
 	}
 </style>
